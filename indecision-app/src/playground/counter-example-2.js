@@ -1,3 +1,5 @@
+// babel src/playground/counter-example-2.js --out-file=public/scripts/app.js --presets=env,react --watch
+
 class Counter extends React.Component {
     constructor(props) {
         super(props);
@@ -7,6 +9,19 @@ class Counter extends React.Component {
         this.state = {
             count : 0
         };
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.count != this.state.count) {
+            localStorage.setItem('count',this.state.count)
+        }
+    }
+    componentDidMount() {
+        const stringCount = localStorage.getItem('count')
+        const count = parseInt(stringCount, 10)
+
+        if(!isNaN(count)) {
+            this.setState(() => ({ count }))
+        }
     }
     handleAddOne() {
         this.setState((prevState) => {
@@ -42,5 +57,4 @@ class Counter extends React.Component {
         )
     }
 }
-
-ReactDOM.render(<Counter />, document.getElementById('app'))
+ReactDOM.render(<Counter count={10}/>, document.getElementById('app'))
