@@ -18,13 +18,34 @@ module.exports = {
       loader: 'babel-loader',
       test: /\.js$/,
       exclude: /node_modules/
+    },
+    {
+      // Allow webpack to load css assets and convert them
+      // to a js representation of the css
+      // loader: 'css-loader',
+      // Takes the css that's in javascript and injects it into the
+      // DOM by injecting a style tag : Getting styles showing up in 
+      // the browser
+      // DOM: https://www.w3schools.com/js/js_htmldom.asp
+      // loader: 'style-loader',
+      // Array of loaders
+      use: [
+        { loader: "style-loader" },
+        { loader: "css-loader" },
+        // sass-loader: Allow us to import sass files
+        // node-sass: Takes sass and converts it to regular css
+        // Behind the scenes, sass-loader user node-sass to convert the files
+        { loader: "sass-loader" }
+      ],
+      test: /\.s?css$/,
     }]
   },
-  // Source mapping: To many easier to see where errors happen
+  // Source mapping: To make easier to see where errors happen
   devtool: 'cheap-module-eval-source-map',
   // Dev Server from webpack
   devServer: {
-    contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    port: 4500
   }
 };
 
