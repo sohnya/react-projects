@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "name": "Book of hot dogs",
+      "id": "unique",
+      "chapters": [
+        {
+          "name": "First chapter",
+          "id": "chapter-1",
+          "sentences": [
+            {
+              "text": "I am Sonja",
+              "translation": "I am Sonja",
+              "words": [
+                {
+                  "text": "I",
+                  "translation": "I",
+                  "root": "value3",
+                  "case": "value4"
+                },
+                {
+                  "text": "am",
+                  "translation": "am",
+                  "root": "value3",
+                  "case": "value4"
+                },
+                {
+                  "text": "Sonja",
+                  "translation": "Sonja",
+                  "root": "value3",
+                  "case": "value4"
+                }
+              ]
+            },
+            {
+              "text": "I love hot dogs",
+              "translation": "I love hot dogs",
+              "words": [
+                {
+                  "text": "I",
+                  "translation": "I",
+                  "root": "value3",
+                  "case": "value4"
+                },
+                {
+                  "text": "love",
+                  "translation": "love",
+                  "root": "value3",
+                  "case": "value4"
+                },
+                {
+                  "text": "hot dogs",
+                  "translation": "hot dogs",
+                  "root": "value3",
+                  "case": "value4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
